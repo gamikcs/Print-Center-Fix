@@ -2,7 +2,7 @@
 
 
 This Metamod plugin fixes messages output on old (non-steam) CS 1.6 clients («%s» instead of a message in the center) caused by AMXX Mod X build v5260 and later.
-
+Use only with the latest 1.10 and 1.9.0 dev versions (still to be confirmed).
 
 <details>
   <summary><b>Screenshots</b></summary>
