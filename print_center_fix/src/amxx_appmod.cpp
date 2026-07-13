@@ -32,9 +32,9 @@ namespace print_center_fix
         constexpr auto* mask = "xxxxxx????x";
         constexpr auto extra_offset = 0x5;
 #else
-        constexpr auto* pattern = "\xE8\x00\x00\x00\x00\x8B\x44\x24\x1C\x83\xC4\x20";
-        constexpr auto* mask = "x????xxxxxxx";
-        constexpr auto extra_offset = 0x0;
+        constexpr auto* pattern = "\x83\xEC\x04\x56\x8B\x4C\x24\x2C\xFF\x71\x08\xFF\x30\xE8\x00\x00\x00\x00\x83\xC4\x10";
+        constexpr auto* mask    = "xxxxxxxxxxxxx????xxxx";
+        constexpr auto extra_offset = 0x0d;
 #endif
         auto* const hook = CreateHookOpcodeCall(pattern, mask, extra_offset, reinterpret_cast<std::uintptr_t>(tramp));
 
@@ -48,13 +48,13 @@ namespace print_center_fix
     TrampHook* AmxxAppMod::HookClientSayText(const ClientSayTextFunc tramp)
     {
 #ifdef _WIN32
-        constexpr auto* pattern = "\x56\xFF\x30\xE8\x00\x00\x00\x00\x83\xC4\x0C";
+        constexpr auto* pattern = "\x56\xFF\x30\xE8\x00\x00\x00\x00\x83\xC4\x04";
         constexpr auto* mask = "xxxx????xxx";
         constexpr auto extra_offset = 0x3;
 #else
-        constexpr auto* pattern = "\xCA\x89\x74\x24\x08\x89\x4C\x24\x04\x89\x04\x24\xE8";
-        constexpr auto* mask = "xxxxxxxxxxxxx";
-        constexpr auto extra_offset = 0xC;
+        constexpr auto* pattern = "\x0F\x44\xC3\x83\xEC\x04\x56\x50\xFF\x37\xE8";
+        constexpr auto* mask = "xxxxxxxxxxx";
+        constexpr auto extra_offset = 0xA;
 #endif
         auto* const hook = CreateHookOpcodeCall(pattern, mask, extra_offset, reinterpret_cast<std::uintptr_t>(tramp));
 
