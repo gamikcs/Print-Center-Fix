@@ -48,9 +48,9 @@ namespace print_center_fix
     TrampHook* AmxxAppMod::HookClientSayText(const ClientSayTextFunc tramp)
     {
 #ifdef _WIN32
-        constexpr auto* pattern = "\x56\xFF\x30\xE8\x00\x00\x00\x00\x83\xC4\x04";
-        constexpr auto* mask = "xxxx????xxx";
-        constexpr auto extra_offset = 0x3;
+        constexpr auto* pattern = "\x56\xC6\x04\x08\x00\xFF\x37\xE8\x00\x00\x00\x00\x83\xC4\x0C";
+        constexpr auto* mask = "xxxxxxxx????xxx";
+        constexpr auto extra_offset = 0x07;
 #else
         constexpr auto* pattern = "\x0F\x44\xC3\x83\xEC\x04\x56\x50\xFF\x37\xE8";
         constexpr auto* mask = "xxxxxxxxxxx";
