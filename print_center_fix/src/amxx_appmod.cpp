@@ -34,7 +34,7 @@ namespace print_center_fix
 #else
         constexpr auto* pattern = "\x83\xEC\x04\x56\x8B\x4C\x24\x2C\xFF\x71\x08\xFF\x30\xE8\x00\x00\x00\x00\x83\xC4\x10";
         constexpr auto* mask    = "xxxxxxxxxxxxx????xxxx";
-        constexpr auto extra_offset = 0x0d;
+        constexpr auto extra_offset = 0xd;
 #endif
         auto* const hook = CreateHookOpcodeCall(pattern, mask, extra_offset, reinterpret_cast<std::uintptr_t>(tramp));
 
@@ -50,7 +50,7 @@ namespace print_center_fix
 #ifdef _WIN32
         constexpr auto* pattern = "\x56\xC6\x04\x08\x00\xFF\x37\xE8\x00\x00\x00\x00\x83\xC4\x0C";
         constexpr auto* mask = "xxxxxxxx????xxx";
-        constexpr auto extra_offset = 0x07;
+        constexpr auto extra_offset = 0x7;
 #else
         constexpr auto* pattern = "\x0F\x44\xC3\x83\xEC\x04\x56\x50\xFF\x37\xE8";
         constexpr auto* mask = "xxxxxxxxxxx";
