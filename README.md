@@ -14,7 +14,7 @@ Use only with the latest 1.10 and 1.9.0 dev versions (still to be confirmed).
 
 
 ## Installation
-* Install the [Metamod](http://metamod.org)
+* Install the [Metamod-P](https://github.com/Bots-United/metamod-p/releases)
 * Download [printcenterfix.zip](https://github.com/gamikcs/Print-Center-Fix/releases/tag/Windows%26Linux) Unpack the `printcenterfix_mm.dll` (for Windows) or `printcenterfix_mm_i386.so` (for Linux) to `<hlds>/cstrike/addons/printcenterfix` directory.
 * Edit the file `<hlds>/cstrike/addons/metamod/plugins.ini`
 * For Windows add:
